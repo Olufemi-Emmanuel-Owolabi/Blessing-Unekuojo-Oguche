@@ -901,7 +901,7 @@ makePager({
   grid:$("#hlGrid"), pager:$("#hlPager"), anchor:$("#highlights"),
   perPage:()=>innerWidth<600?2:innerWidth<920?4:3,
   render:(h,idx,i)=>`<article class="hl-card glass" style="animation-delay:${i*.08}s">
-    <div class="hl-img"><img src="${esc(h.img)}" alt="${esc(h.title)}" loading="lazy"><span class="hl-badge">${String(idx+1).padStart(2,"0")}</span><span class="hl-chip">${h.todo?"To add":esc(h.tag)}</span></div>
+    <div class="hl-img"><img src="${esc(h.img)}" alt="${esc(h.title)}" loading="lazy"><span class="hl-chip">${h.todo?"To add":esc(h.tag)}</span></div>
     <h3>${esc(h.title)}</h3><p>${esc(h.text)}</p>
     ${h.link?`<div class="tags"><a class="tag" style="background:rgba(var(--b-rgb),.1);color:var(--b)" href="${esc(h.link)}" target="_blank" rel="noopener">Read more ↗</a></div>`:""}</article>`
 });
