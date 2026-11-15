@@ -375,6 +375,10 @@ section{position:relative;padding:110px 0}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .award-bg,.book-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.26;mix-blend-mode:luminosity;animation:kb 20s ease-in-out infinite alternate}
 .award-hero .eyebrow,.award-hero h3,.award-hero p,.award-hero a.btn{position:relative;z-index:1}
+.award-bg.award-trophy{opacity:.9;mix-blend-mode:normal;left:auto;width:50%;object-position:50% 30%;-webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
+.award-hero h3,.award-hero p{max-width:54%}
+.award-hero p+p{margin-top:12px}
+@media (max-width:820px){.award-hero{padding-top:260px}.award-bg.award-trophy{width:100%;height:300px;bottom:auto;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}.award-hero h3,.award-hero p{max-width:none}}
 .book-info>*:not(.book-bg):not(.ring){position:relative;z-index:1}
 .vposter{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;transition:transform .8s}
 .vthumb:hover .vposter{transform:scale(1.06)}
@@ -550,16 +554,12 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line)}
     </div>
     <div class="awards-wrap">
       <div class="award-hero reveal">
-        <img class="award-bg" src="Images/blessed-menorah-05-koinonia-august-miracle-service-lead-worship.jpg" alt="" loading="lazy">
+        <img class="award-bg award-trophy" src="Images/blessed-menorah-20-eko-heritage-awards-2025-trophy.jpg" alt="Eko Heritage Awards 2025 trophy presented to Blessing Unekuojo Oguche" loading="lazy">
         <div class="ring r1"></div><div class="ring r2"></div>
-        <svg class="trophy" viewBox="0 0 100 100" fill="none" style="stroke:var(--b-xl)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M30 18h40v20a20 20 0 0 1-40 0z" fill="rgba(var(--a-rgb),.25)"/>
-          <path d="M30 24H18a10 10 0 0 0 12 16M70 24h12a10 10 0 0 1-12 16"/>
-          <path d="M50 58v14M36 84h28M40 72h20v12H40z"/>
-        </svg>
         <div class="eyebrow" style="color:var(--a-xl)">Eko Heritage Awards 2025</div>
         <h3>Best Female Singer (Diaspora)</h3>
         <p>Awarded at the 5th Eko Heritage Awards on Sunday 27 July 2025, at the Lagos Oriental Hotel, Victoria Island, Lagos. Organised by Ivory Forte Entertainment Concept under the theme "Celebrating Timeless Legacy".</p>
+        <p>The award placed her among a line-up of well-known personalities honoured that night. Fellow honourees included content creator Amadou Elizabeth (popularly known as Jarvis), reality TV personality Phyna, comedian Shank Comics, content creator Purple Speedy, and singer Just Bunmi, who received Best Female Soul Singer.</p>
         <a class="btn" style="background:#fff;color:var(--d1);margin-top:22px;align-self:flex-start" href="https://pmnewsnigeria.com/2025/07/28/blessed-menorah-wins-best-female-singer-diaspora-at-2025-eko-heritage-awards/" target="_blank" rel="noopener">Read the P.M. News report ↗</a>
       </div>
       <div class="award-list" id="awardList"></div>
@@ -751,7 +751,7 @@ const PROFILE = {
 
   // Highlights: set todo:true on anything still to be filled in.
   highlights: [
-    {img:"Images/blessed-menorah-07-koinonia-august-miracle-service-solo.jpg", ico:"🏆", title:"Best Female Singer (Diaspora)", text:"Honoured at the 2025 Eko Heritage Awards in Lagos, alongside names such as Jarvis, Phyna and Shank Comics.", tag:"July 2025", link:"https://pmnewsnigeria.com/2025/07/28/blessed-menorah-wins-best-female-singer-diaspora-at-2025-eko-heritage-awards/"},
+    {img:"Images/blessed-menorah-20-eko-heritage-awards-2025-trophy.jpg", ico:"🏆", title:"Best Female Singer (Diaspora)", text:"Honoured at the 2025 Eko Heritage Awards in Lagos, alongside Jarvis, Phyna, Shank Comics, Purple Speedy and Just Bunmi.", tag:"July 2025", link:"https://pmnewsnigeria.com/2025/07/28/blessed-menorah-wins-best-female-singer-diaspora-at-2025-eko-heritage-awards/"},
     {img:"Images/blessed-menorah-06-koinonia-august-miracle-service-worship-team.jpg", ico:"🔥", title:"Koinonia Sound of Revival", text:"Associated with Koinonia Sound of Revival, ministering in worship within the movement.", tag:"Ministry"},
     {img:"Images/blessed-menorah-08-koinonia-deliver-us-from-evil-worship-team.jpg", ico:"🎙️", title:"Shared platforms with gospel giants", text:"Has shared platforms with renowned worship leaders Dunsin Oyekan and Nathaniel Bassey.", tag:"Live ministry"},
     {img:"Images/blessed-menorah-19-koinonia-may-miracle-service-worship-trio.jpg", ico:"🤝", title:"Collaborations", text:"Has worked with David Dam, Kaestrings and Steve Tebb on music and ministry.", tag:"Collaborations"},
@@ -778,6 +778,7 @@ const PROFILE = {
 
   // Gallery: photos live in the Images/ folder. size can be "tall" or "wide".
   gallery: [
+    {src:"Images/blessed-menorah-20-eko-heritage-awards-2025-trophy.jpg", title:"Best Female Singer (Diaspora)", sub:"Eko Heritage Awards 2025"},
     {src:"Images/blessed-menorah-17-koinonia-june-miracle-service-hands-raised.jpg", title:"Hands raised in worship", sub:"Koinonia Miracle Service, June", size:"tall"},
     {src:"Images/blessed-menorah-06-koinonia-august-miracle-service-worship-team.jpg", title:"August Miracle Service", sub:"Koinonia · worship team", size:"wide"},
     {src:"Images/blessed-menorah-07-koinonia-august-miracle-service-solo.jpg", title:"Leading worship", sub:"Koinonia Miracle Service, August"},
@@ -791,7 +792,7 @@ const PROFILE = {
     {src:"Images/blessed-menorah-18-koinonia-keys-to-destiny-fulfillment-solo.jpg", title:"Arms open", sub:"Koinonia · Keys to Destiny Fulfillment"},
     {src:"Images/blessed-menorah-05-koinonia-august-miracle-service-lead-worship.jpg", title:"Lead vocals", sub:"Koinonia Miracle Service, August"},
     {src:"Images/blessed-menorah-16-koinonia-september-miracle-service-worship-team.jpg", title:"September Miracle Service", sub:"Koinonia · worship team", size:"wide"},
-    {src:"Images/blessed-menorah-13-koinonia-june-miracle-service-under-the-lights.jpg", title:"Under the lights", sub:"Koinonia Miracle Service, June"},
+    {src:"Images/blessed-menorah-13-koinonia-june-miracle-service-under-the-lights.jpg", title:"Under the lights", sub:"Koinonia Miracle Service, June", size:"wide"},
     {src:"Images/blessed-menorah-08-koinonia-deliver-us-from-evil-worship-team.jpg", title:"Deliver Us From Evil", sub:"Koinonia · worship team"},
     {src:"Images/blessed-menorah-19-koinonia-may-miracle-service-worship-trio.jpg", title:"May Miracle Service", sub:"Koinonia · worship team", size:"wide"},
     {src:"Images/blessed-menorah-04-koinonia-witnesses-part-two.jpg", title:"Witnesses Part Two", sub:"Koinonia"},
