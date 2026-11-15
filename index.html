@@ -268,6 +268,25 @@ section{position:relative;padding:110px 0}
 .video-side{display:flex;flex-direction:column;gap:22px}
 .video-side .vthumb .play{width:54px;height:54px}
 .video-side .vthumb .play svg{width:18px;height:18px}
+.video-feature{align-items:start}
+#vFeatured{position:sticky;top:96px}
+@media (max-width:820px){#vFeatured{position:static}}
+.setlist{padding:28px}
+.setlist h3{font-size:1.7rem;margin-bottom:6px}
+.sl-sub{color:var(--b);font-weight:600;font-size:.9rem;margin-bottom:12px}
+.sl-about{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+.sl-head{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.setlist ol{list-style:none;counter-reset:s;display:grid;gap:8px;margin-bottom:18px}
+.setlist li{counter-increment:s;display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.6);border:1px solid var(--line);transition:transform .25s}
+.setlist li:hover{transform:translateX(4px)}
+.setlist li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--grad);color:#fff;font-size:.8rem;font-weight:700}
+.setlist li b{font-family:Syne;font-size:.95rem;display:block;line-height:1.2}
+.setlist li span{font-size:.8rem;color:var(--muted)}
+.setlist li div{display:flex;flex-direction:column}
+.sl-tag{font-family:Syne;font-weight:700;font-size:1.05rem;margin-bottom:16px}
+.sl-btn{width:100%;justify-content:center}
+.vembed{background:#000;box-shadow:0 30px 70px rgba(var(--b-rgb),.25)}
+.vembed::after{display:none}
 .video-note{font-size:.85rem;color:var(--muted);margin-top:18px}
 @media (max-width:820px){.video-feature{grid-template-columns:1fr}}
 
@@ -574,6 +593,7 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line)}
       <div>
         <div class="eyebrow">Videos</div>
         <h2 class="sec-title">Watch &amp; <span class="grad-text">listen.</span></h2>
+        <p class="sec-lead">Spontaneous worship sessions to pause, behold Jesus and rest in His presence.</p>
       </div>
       <a class="btn btn-ghost" id="ytAll" target="_blank" rel="noopener">More on YouTube ↗</a>
     </div>
@@ -691,6 +711,7 @@ footer{padding:60px 0 40px;border-top:1px solid var(--line)}
 <footer>
   <div class="wrap">
     <div class="foot-big grad-text">Blessed Menorah</div>
+    <p style="text-align:center;font-family:Syne;font-weight:700;font-size:1.2rem;margin:-20px 0 36px;color:var(--muted)">Beholding Jesus. Becoming like Him.</p>
     <div class="foot-row">
       <span>© <span id="yr"></span> Blessing Unekuojo Oguche · Blessed Menorah</span>
       <div class="socials" id="footSocials"></div>
@@ -716,7 +737,7 @@ const PROFILE = {
     youtube:   "",   // e.g. "https://youtube.com/@blessedmenorah"
     instagram: "",   // e.g. "https://instagram.com/blessedmenorah"
     tiktok:    "",   // e.g. "https://tiktok.com/@blessedmenorah"
-    featuredVideo: "" // full YouTube URL, e.g. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
+    featuredVideo: "https://www.youtube.com/watch?v=TZ3lQmyxG7w" // full YouTube URL, e.g. "https://www.youtube.com/watch?v=XXXXXXXXXXX"
   },
   bookingEmail: "",   // e.g. "bookings@blessedmenorah.com"
   bookingPhone: "",   // optional, e.g. "+44 7…"
@@ -746,7 +767,7 @@ const PROFILE = {
     ["2020","🎤","The ministry begins","She realises music is her true passion and begins pursuing her music ministry on a larger scale as Blessed Menorah."],
     ["2024","🎓","MSc AI & Data Science, Hull","Earns a master's degree from the University of Hull and settles in Sheffield, UK."],
     ["2025","🏆","Eko Heritage Award","Wins Best Female Singer (Diaspora) at the 5th Eko Heritage Awards in Lagos on 27 July 2025."],
-    ["Today","★","Ministering across nations","She leads worship and ministers in song across the UK and Nigeria, building connections in the UK gospel community."]
+    ["Today","★","Ministering across nations","She leads worship and ministers in song across the UK and Nigeria, and shares spontaneous worship sessions such as The Beholding online."]
   ],
 
   // Highlights: set todo:true on anything still to be filled in.
@@ -759,7 +780,7 @@ const PROFILE = {
     {img:"Images/blessed-menorah-14-koinonia-deliver-us-from-evil-worship.jpg", ico:"🕊️", title:"Spontaneous worship", text:"Known for contemporary gospel, spontaneous worship and prayer-inspired expression in live gatherings.", tag:"Sound"},
     {img:"Images/blessed-menorah-18-koinonia-keys-to-destiny-fulfillment-solo.jpg", ico:"📰", title:"Featured in P.M. News", text:"Her award and ministry were reported by P.M. News Nigeria on 28 July 2025.", tag:"Press", link:"https://pmnewsnigeria.com/2025/07/28/blessed-menorah-wins-best-female-singer-diaspora-at-2025-eko-heritage-awards/"},
     {img:"Images/blessed-menorah-04-koinonia-witnesses-part-two.jpg", ico:"🎓", title:"Artist and technologist", text:"Pairs her ministry with an MSc in AI & Data Science from the University of Hull (2024).", tag:"2024"},
-    {img:"Images/blessed-menorah-13-koinonia-june-miracle-service-under-the-lights.jpg", ico:"💿", title:"[Single / release title]", text:"[Release date, platforms, stream or view counts, and any press or playlist coverage.]", todo:true}
+    {img:"Images/blessed-menorah-13-koinonia-june-miracle-service-under-the-lights.jpg", ico:"▶", title:"The Beholding", text:"A spontaneous, inspirational worship session on YouTube, with songs by Jesus Image, CeCe Winans, Dunsin Oyekan and Victoria Orenze.", tag:"Worship session", link:"https://www.youtube.com/watch?v=TZ3lQmyxG7w"}
   ],
 
   awards: [
@@ -771,7 +792,11 @@ const PROFILE = {
 
   videos: [
     // {title, sub, url}. The first one is the featured video.
-    {title:"[Featured performance]", sub:"Featured video", url:"", poster:"Images/blessed-menorah-09-koinonia-solo-ministration.jpg"},
+    {title:"The Beholding", sub:"Spontaneous & inspirational worship session · Rest in His presence", url:"https://www.youtube.com/watch?v=TZ3lQmyxG7w",
+     about:"An inspirational worship session to rest in His presence, adoring the great and mighty King. A moment to pause, behold Jesus, and lift our hearts in worship.",
+     tagline:"Beholding Jesus. Becoming like Him.",
+     setlist:[["Worthy Is Your Name","Jesus Image"],["Holy Forever","CeCe Winans"],["Baba","Dunsin Oyekan"],["The Glory Song","Dunsin Oyekan"],["Eh Eh Eh Chant","Victoria Orenze"]],
+     credit:"Worship cover recorded for devotional and inspirational purposes. All songs, lyrics and compositions belong to their original writers, artists and copyright owners.", poster:"Images/blessed-menorah-09-koinonia-solo-ministration.jpg"},
     {title:"[Live session]", sub:"Live", url:"", poster:"Images/blessed-menorah-10-koinonia-keys-to-destiny-fulfillment-close-up.jpg"},
     {title:"[Cover / original]", sub:"Music video", url:"", poster:"Images/blessed-menorah-12-koinonia-june-miracle-service-portrait.jpg"}
   ],
@@ -852,7 +877,7 @@ socials($("#heroSocials")); socials($("#footSocials"));
 $("#wave").innerHTML = Array.from({length:32},(_,i)=>`<i style="animation-delay:${(-Math.random()*1.2).toFixed(2)}s;animation-duration:${(0.8+Math.random()*0.9).toFixed(2)}s"></i>`).join("");
 
 /* marquee */
-const mq=["Gospel","Worship","Award Winner","Blessed Menorah","Spontaneous Worship","Sheffield","Lagos","Abuja"];
+const mq=["Gospel","Worship","Award Winner","Blessed Menorah","The Beholding","Spontaneous Worship","Sheffield","Abuja"];
 $("#marquee").innerHTML = [...mq,...mq].map(t=>`<span>${t}</span>`).join("");
 
 /* facts */
@@ -905,7 +930,7 @@ makePager({
   render:(h,idx,i)=>`<article class="hl-card glass" style="animation-delay:${i*.08}s">
     <div class="hl-img"><img src="${esc(h.img)}" alt="${esc(h.title)}" loading="lazy"><span class="hl-chip">${h.todo?"To add":esc(h.tag)}</span></div>
     <h3>${esc(h.title)}</h3><p>${esc(h.text)}</p>
-    ${h.link?`<div class="tags"><a class="tag" style="background:rgba(var(--b-rgb),.1);color:var(--b)" href="${esc(h.link)}" target="_blank" rel="noopener">Read more ↗</a></div>`:""}</article>`
+    ${h.link?`<div class="tags"><a class="tag" style="background:rgba(var(--b-rgb),.1);color:var(--b)" href="${esc(h.link)}" target="_blank" rel="noopener">${/youtu/.test(h.link)?"Watch ↗":"Read more ↗"}</a></div>`:""}</article>`
 });
 
 /* awards */
@@ -921,9 +946,27 @@ function videoCard(v,featured){
     <div class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
     <div class="vmeta"><div><b>${esc(v.title)}</b><small>${esc(v.sub)}</small></div><span class="vbadge">${v.url?"YouTube":"Add link"}</span></div></a>`;
 }
-const vids = PROFILE.videos.map((v,i)=> i===0 && PROFILE.links.featuredVideo ? {...v,url:PROFILE.links.featuredVideo} : v);
-$("#vFeatured").innerHTML = videoCard(vids[0],true);
-$("#vSide").innerHTML = vids.slice(1).map(v=>videoCard(v,false)).join("");
+const allVids = PROFILE.videos.map((v,i)=> i===0 && PROFILE.links.featuredVideo ? {...v,url:PROFILE.links.featuredVideo} : v);
+const liveVids = allVids.filter(v=>v.url);            // only show videos that have a link
+const vids = liveVids.length ? liveVids : allVids;
+const fid = ytId(vids[0].url);
+if(embedAllowed && fid){
+  // real embed: the YouTube player sits right on the page
+  $("#vFeatured").innerHTML = `<div class="vthumb vembed"><iframe src="https://www.youtube-nocookie.com/embed/${fid}?rel=0&modestbranding=1" title="${esc(vids[0].title)}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+} else {
+  $("#vFeatured").innerHTML = videoCard(vids[0],true);
+}
+const f=vids[0];
+$("#vSide").innerHTML = (f.setlist?`<div class="setlist glass reveal">
+    <div class="eyebrow">Now showing</div>
+    <h3>${esc(f.title)}</h3><p class="sl-sub">${esc(f.sub)}</p>
+    ${f.about?`<p class="sl-about">${esc(f.about)}</p>`:""}
+    <div class="sl-head">Song list</div>
+    <ol>${f.setlist.map(([t,a])=>`<li><div><b>${esc(t)}</b><span>${esc(a)}</span></div></li>`).join("")}</ol>
+    ${f.tagline?`<p class="sl-tag grad-text">${esc(f.tagline)}</p>`:""}
+    <a class="btn btn-ghost sl-btn" href="${esc(f.url)}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
+  </div>`:"") + vids.slice(1).map(v=>videoCard(v,false)).join("");
+if(f.credit) $("#vNote").dataset.credit=f.credit;
 document.querySelectorAll(".vthumb").forEach(a=>a.addEventListener("click",e=>{
   if(!a.dataset.url){e.preventDefault();toast("Add a YouTube link in PROFILE.videos");return;}
   if(embedAllowed && a.dataset.id){
@@ -932,8 +975,8 @@ document.querySelectorAll(".vthumb").forEach(a=>a.addEventListener("click",e=>{
     a.removeAttribute("href");
   }
 }));
-const yt=$("#ytAll"); if(PROFILE.links.youtube) yt.href=PROFILE.links.youtube; else yt.addEventListener("click",e=>{e.preventDefault();toast("Add the YouTube channel link in PROFILE.links")});
-$("#vNote").textContent = embedAllowed ? "Videos play right here on the page." : "Videos open on YouTube from this preview. Once the site is on its own domain, they play inline.";
+const yt=$("#ytAll"); if(PROFILE.links.youtube) yt.href=PROFILE.links.youtube; else yt.style.display="none";
+$("#vNote").textContent = [$("#vNote").dataset.credit||"", embedAllowed ? "" : "In this preview the video opens on YouTube; on the live site it plays right here on the page."].filter(Boolean).join(" ");
 
 /* gallery (paginated) */
 let userPhotos=[];
